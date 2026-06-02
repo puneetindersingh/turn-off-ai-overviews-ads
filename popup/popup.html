@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turn Off AI Overviews & Ads</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../icons/icon32.png" alt="" width="24" height="24" />
+      <h1>Turn Off AI &amp; Ads</h1>
+    </header>
+
+    <main>
+      <label class="row" for="hideAi">
+        <span class="label">
+          <span class="title">Hide AI Overviews</span>
+          <span class="sub">Remove the AI-generated answer block</span>
+        </span>
+        <span class="switch">
+          <input type="checkbox" id="hideAi" checked />
+          <span class="track"></span>
+        </span>
+      </label>
+
+      <label class="row" for="hideAds">
+        <span class="label">
+          <span class="title">Hide Ads</span>
+          <span class="sub">Text, shopping &amp; sponsored results</span>
+        </span>
+        <span class="switch">
+          <input type="checkbox" id="hideAds" checked />
+          <span class="track"></span>
+        </span>
+      </label>
+    </main>
+
+    <footer>
+      <span id="status">Active on Google Search</span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

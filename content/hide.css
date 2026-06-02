@@ -1,0 +1,37 @@
+/*
+ * Clean SERP — static hide rules.
+ * Scoped to classes added on <html> at document_start so nothing
+ * paints before being hidden. Toggling a class off reveals content
+ * with no ad-flash (revealing is always safe).
+ */
+
+/* ---------- ADS (text ads, shopping ads, sidebar ads) ---------- */
+html.csp-hide-ads #tads,
+html.csp-hide-ads #tadsb,
+html.csp-hide-ads #bottomads,
+html.csp-hide-ads #tvcap [data-text-ad],
+html.csp-hide-ads [data-text-ad],
+html.csp-hide-ads .commercial-unit-desktop-top,
+html.csp-hide-ads .commercial-unit-desktop-rhs,
+html.csp-hide-ads .cu-container,
+html.csp-hide-ads #rhs .pla-unit-container,
+html.csp-hide-ads .pla-unit,
+html.csp-hide-ads .shopping-carousel-pla,
+html.csp-hide-ads div[aria-label="Ads"],
+html.csp-hide-ads div[aria-label="Ads\00B7"],
+html.csp-hide-ads .csp-ad {
+  display: none !important;
+}
+
+/* ---------- AI OVERVIEWS ---------- */
+html.csp-hide-ai .csp-ai {
+  display: none !important;
+}
+
+/* Collapse leftover empty spacer left behind by removed blocks */
+html.csp-hide-ads #taw:empty,
+html.csp-hide-ads #tvcap:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

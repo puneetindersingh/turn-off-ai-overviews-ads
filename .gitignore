@@ -1,0 +1,4 @@
+# Chrome extension signing key — never commit
+*.pem
+# OS/editor cruft
+.DS_Store

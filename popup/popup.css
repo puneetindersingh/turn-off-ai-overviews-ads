@@ -1,0 +1,92 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f1f1f;
+  --sub: #5f6368;
+  --line: #ececec;
+  --accent: #1a73e8;
+  --track: #cfd3d7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #202124;
+    --fg: #e8eaed;
+    --sub: #9aa0a6;
+    --line: #3c4043;
+    --accent: #8ab4f8;
+    --track: #5f6368;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  width: 300px;
+  font-family: "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+}
+header h1 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+main { padding: 6px 0; }
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.row:hover { background: rgba(127, 127, 127, 0.07); }
+
+.label { display: flex; flex-direction: column; gap: 2px; }
+.title { font-size: 14px; font-weight: 500; }
+.sub { font-size: 12px; color: var(--sub); }
+
+/* Toggle switch */
+.switch { position: relative; flex: none; width: 40px; height: 22px; }
+.switch input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.track {
+  position: absolute;
+  inset: 0;
+  background: var(--track);
+  border-radius: 22px;
+  transition: background 0.18s ease;
+  pointer-events: none;
+}
+.track::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.18s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.switch input:checked + .track { background: var(--accent); }
+.switch input:checked + .track::before { transform: translateX(18px); }
+.switch input:focus-visible + .track { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+footer {
+  padding: 10px 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--sub);
+}
