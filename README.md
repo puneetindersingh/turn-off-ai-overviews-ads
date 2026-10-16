@@ -2,6 +2,8 @@
 
 A fast, privacy-respecting Chrome extension (Manifest V3) that hides, disables and removes **Google AI Overviews** and **ads** from Google Search results.
 
+<img src="docs/popup-light.png" alt="The popup: two toggles, Hide AI Overviews and Hide Ads" width="300">
+
 ## Why it's fast & flash-free
 - Hides everything via **static CSS injected at `document_start`** — elements never paint before being hidden.
 - Defaults are applied **optimistically** (on) before async storage loads; disabling a toggle only ever *reveals* content, so there's never a flash of ads.
@@ -41,3 +43,7 @@ dist/                  store .zip + self-distribution .crx/.pem
 
 ## Maintenance note
 Google changes its SERP DOM frequently. If a new ad format or the AI Overview block reappears, update the selectors in `content/hide.css` and the label set / detection in `content/content.js`.
+
+## More from the same maker
+- **[SEO Side Panel](https://chromewebstore.google.com/detail/seo-side-panel/npjfeaapfebfgkmcbikigoigojfhcbho)**: a free Chrome extension that stays open beside every page you visit and lists its SEO issues, each with the fix.
+- Every free tool, including a self-hosted SEO crawler and a WordPress plugin: **[puneetindersingh.github.io](https://puneetindersingh.github.io/)**
